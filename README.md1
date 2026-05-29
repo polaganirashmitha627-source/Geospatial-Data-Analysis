@@ -1,0 +1,34 @@
+import pandas as pd
+import folium
+import matplotlib.pyplot as plt
+
+# Load dataset
+data = pd.read_csv("data.csv")
+
+# Print dataset
+print("Dataset:")
+print(data)
+
+# Create a map centered in India
+map_center = [20.5937, 78.9629]
+m = folium.Map(location=map_center, zoom_start=5)
+
+# Add markers for store locations
+for index, row in data.iterrows():
+    folium.Marker(
+        location=[row['Latitude'], row['Longitude']],
+        popup=f"City: {row['City']}\nSales: {row['Sales']}",
+        tooltip=row['City']
+    ).add_to(m)
+
+# Save map
+m.save("store_locations_map.html")
+print("Map saved as store_locations_map.html")
+
+# Plot sales chart
+plt.figure(figsize=(8,5))
+plt.bar(data['City'], data['Sales'])
+plt.xlabel("City")
+plt.ylabel("Sales")
+plt.title("Sales by Location")
+plt.show()
