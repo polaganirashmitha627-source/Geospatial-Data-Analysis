@@ -1,0 +1,30 @@
+# Geospatial Data Analysis
+
+## Project Description
+This project analyzes location-based sales data to identify business expansion opportunities.
+
+## Features
+- Visualize store locations on a map
+- Analyze sales data by city
+- Generate sales chart
+
+## Technologies Used
+- Python
+- Pandas
+- Folium
+- Matplotlib
+
+## Installation
+
+1. Clone repository:
+git clone your-github-link
+
+2. Install dependencies:
+pip install -r requirements.txt
+
+3. Run project:
+python app.py
+
+## Output
+- Interactive map of store locations
+- Sales chart visualization
